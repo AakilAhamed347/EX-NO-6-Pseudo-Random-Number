@@ -1,17 +1,52 @@
 # EX-NO-6-Pseudo-Random-Number
 
-# AIM: 
+## AIM: 
 Implementation of Pseudorandom Number Generation Using Standard library
 
-# ALGORITHM:
+## ALGORITHM:
 Start the program and import the required libraries.
 Seed the random number generator using the current time(i.e) rand(time(0));
 Get the number of randon number to generate.
 Pass the value for number of iterations and print the numbers.
 End the program.
 
-# PROGRAM:
+## PROGRAM:
+~~~
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-# OUTPUT:
+int main() 
+{
+    int count, min, max;
 
-# RESULT:
+    printf("Enter the number of random numbers to generate: ");
+    scanf("%d", &count);
+
+    printf("Enter the minimum value: ");
+    scanf("%d", &min);
+
+    printf("Enter the maximum value: ");
+    scanf("%d", &max);
+
+    srand(time(NULL));  // Seed the random number generator
+
+    printf("Pseudorandom numbers:\n");
+    for (int i = 0; i < count; i++) 
+    {
+        int random_number = (rand() % (max - min + 1)) + min;
+        printf("%d\n", random_number);
+    }
+
+    return 0;
+}
+
+~~~
+
+## OUTPUT:
+
+<img width="589" height="455" alt="image" src="https://github.com/user-attachments/assets/915a6c2f-0783-40c0-9186-b1fbafc51fdd" />
+
+
+## RESULT:
+Thus, the C program to generate pseudorandom numbers within a user-defined range was executed successfully.
